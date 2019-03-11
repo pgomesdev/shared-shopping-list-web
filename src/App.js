@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import ShoppingLists from './components/ShoppingLists'
 
 class App extends Component {
   render() {
     return (
-      <h1>Welcome to the Shared Shopping List App</h1>
+      <ShoppingLists />
     )
   }
 }

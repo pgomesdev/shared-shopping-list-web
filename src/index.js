@@ -4,6 +4,7 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import App from './App'
 import { endpoint } from './utils/config'
+import './index.css'
 
 const client = new ApolloClient({
   uri: process.env.NODE_ENV === 'development' ? endpoint : '',
