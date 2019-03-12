@@ -5,6 +5,7 @@ import { ApolloProvider } from 'react-apollo'
 import App from './App'
 import { endpoint } from './utils/config'
 import './index.css'
+import './style/global.css'
 
 const client = new ApolloClient({
   uri: process.env.NODE_ENV === 'development' ? endpoint : '',
