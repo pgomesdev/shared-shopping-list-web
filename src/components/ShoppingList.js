@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const ShoppingList = ({ shoppingList }) => (
-  <li>{shoppingList.name}</li>
+  <div className='list-item'>
+    <p className='list-name'>{shoppingList.name}</p>
+  </div>
 )
 
 ShoppingList.propTypes = {

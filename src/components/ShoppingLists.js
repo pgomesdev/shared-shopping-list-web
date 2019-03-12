@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import ShoppingList from './ShoppingList'
@@ -15,23 +15,25 @@ const SHOPPING_LISTS_QUERY = gql`
 class ShoppingLists extends Component {
   render() {
     return (
-      <div>
-        <h1>Suas Listas</h1>
-        <Query query={SHOPPING_LISTS_QUERY}>
-          {({ data, loading, error }) => {
-            if (error) return <p>An error ocurred...</p>
-            if (loading) return <p>Loading...</p>
+      <Fragment>
+        <h1 className='page-title'>Suas Listas</h1>
+        <div className='shopping-list-container'>
+          <Query query={SHOPPING_LISTS_QUERY}>
+            {({ data, loading, error }) => {
+              if (error) return <p>An error ocurred...</p>
+              if (loading) return <p>Loading...</p>
 
-            return (
-              <ul>
-                {data.listShoppingLists.map(shoppingList => (
-                  <ShoppingList key={shoppingList.id} shoppingList={shoppingList} />
-                ))}
-              </ul>
-            )
-          }}
-        </Query>
-      </div>
+              return (
+                <div className='shopping-list'>
+                  {data.listShoppingLists.map(shoppingList => (
+                    <ShoppingList key={shoppingList.id} shoppingList={shoppingList} />
+                  ))}
+                </div>
+              )
+            }}
+          </Query>
+        </div>
+      </Fragment>
     )
   }
 }
