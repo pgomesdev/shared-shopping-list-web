@@ -14,5 +14,6 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>,
+  // eslint-disable-next-line
   document.getElementById('root')
 )

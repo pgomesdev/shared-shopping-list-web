@@ -11,7 +11,7 @@ const SHOPPING_LISTS_QUERY = gql`
     }
   }
 `
-
+/* eslint-disable */
 class ShoppingLists extends Component {
   render() {
     return (
@@ -29,11 +29,12 @@ class ShoppingLists extends Component {
                 ))}
               </ul>
             )
-          }} 
+          }}
         </Query>
       </div>
     )
   }
 }
+/* eslint-enable */
 
 export default ShoppingLists

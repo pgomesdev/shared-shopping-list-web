@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ShoppingLists from './components/ShoppingLists'
 
+/* eslint-disable */
 class App extends Component {
   render() {
     return (
@@ -8,5 +9,6 @@ class App extends Component {
     )
   }
 }
+/* eslint-enable */
 
 export default App
