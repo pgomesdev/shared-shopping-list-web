@@ -20,6 +20,27 @@
   background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.create-new-list-btn {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #f5af19;
+  background: #ffffff;
+  padding: 1rem;
+  border: 1px #feb47b solid;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 12px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  outline: none;
+}
+
+.create-new-list-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
 .shopping-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -52,5 +73,31 @@
   .page-title {
     margin: 0;
     text-align: center;
+  }
+}
+
+@media (max-width: 750px) and (min-width: 500px) {
+  .shopping-list {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .list-item {
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 499px) {
+  .shopping-list {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  .list-item {
+    margin: 0 5px;
+  }
+
+  .create-new-list-container {
+    justify-content: center;
   }
 }

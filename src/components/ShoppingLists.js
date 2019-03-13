@@ -17,6 +17,9 @@ class ShoppingLists extends Component {
     return (
       <Fragment>
         <h1 className='page-title'>Suas Listas</h1>
+        <div className='create-new-list-container'>
+          <button className='create-new-list-btn'>Criar Nova Lista</button>
+        </div>
         <div className='shopping-list-container'>
           <Query query={SHOPPING_LISTS_QUERY}>
             {({ data, loading, error }) => {
