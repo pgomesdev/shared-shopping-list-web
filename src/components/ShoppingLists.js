@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
+import { Link } from 'react-router-dom'
 import ShoppingList from './ShoppingList'
 
-const SHOPPING_LISTS_QUERY = gql`
+export const SHOPPING_LISTS_QUERY = gql`
   query SHOPPING_LISTS_QUERY {
     listShoppingLists {
       id
@@ -18,7 +19,7 @@ class ShoppingLists extends Component {
       <Fragment>
         <h1 className='page-title'>Suas Listas</h1>
         <div className='create-new-list-container'>
-          <button className='create-new-list-btn'>Criar Nova Lista</button>
+          <Link className='create-new-list-btn' to='/new'>Criar Nova Lista</Link>
         </div>
         <div className='shopping-list-container'>
           <Query query={SHOPPING_LISTS_QUERY}>
