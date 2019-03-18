@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import { Link } from 'react-router-dom'
-import ShoppingList from './ShoppingList'
+import ShoppingListItems from './ShoppingListItem'
 
 export const SHOPPING_LISTS_QUERY = gql`
   query SHOPPING_LISTS_QUERY {
@@ -24,13 +24,13 @@ class ShoppingLists extends Component {
         <div className='shopping-list-container'>
           <Query query={SHOPPING_LISTS_QUERY}>
             {({ data, loading, error }) => {
-              if (error) return <p>An error ocurred...</p>
-              if (loading) return <p>Loading...</p>
+              if (error) return <p>Aconteceu um erro...</p>
+              if (loading) return <p>Carregando...</p>
 
               return (
                 <div className='shopping-list'>
                   {data.listShoppingLists.map(shoppingList => (
-                    <ShoppingList key={shoppingList.id} shoppingList={shoppingList} />
+                    <ShoppingListItems key={shoppingList.id} shoppingList={shoppingList} />
                   ))}
                 </div>
               )
